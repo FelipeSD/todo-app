@@ -1,10 +1,12 @@
 import styled from 'styled-components';
+import {backgroundColor, bgImageDesktop, bgImageMobile, textColor} from "../../styles/theme";
+
 
 export const MainContainer = styled.main`
     display: flex;
     min-height: 100vh;
-    color: ${props => props.theme.lightGrayishBlue};
-    background-color: ${props => props.theme.name === "dark" ? props.theme.veryDarkBlue : props.theme.veryLightGray};
+    color: ${textColor};
+    background-color: ${backgroundColor};
   
     transition: all 150ms ease-in-out;
 `
@@ -28,13 +30,13 @@ export const TodoContainer = styled.section`
       background-position: top;
       background-repeat: no-repeat;
       background-image: 
-              url(${props => props.theme.name === "dark" ? props.theme.bgDesktopDark : props.theme.bgDesktopLight});
+              url(${bgImageDesktop});
     }
   
   @media(max-width: 375px){
     &:before {
       background-image:
-              url(${props => props.theme.name === "dark" ? props.theme.bgMobileDark : props.theme.bgMobileLight});
+              url(${bgImageMobile});
     }
   }
 `
