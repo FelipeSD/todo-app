@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import {backgroundColor, bgImageDesktop, bgImageMobile, textColor} from "../../styles/theme";
+import {backgroundColor, bgImageDesktop, bgImageMobile, placeholderColor, textColor} from "../../styles/theme";
+import {mobileBreakpoint} from "../../styles/global";
 
 
 export const MainContainer = styled.main`
@@ -12,7 +13,9 @@ export const MainContainer = styled.main`
 `
 
 export const TodoContainer = styled.section`
-    max-width: 800px;
+    max-width: 600px;
+    width: 100%;
+  
     margin: 0 auto;
     padding: 3rem;
     z-index: 1;
@@ -33,7 +36,11 @@ export const TodoContainer = styled.section`
               url(${bgImageDesktop});
     }
   
-  @media(max-width: 375px){
+  @media only screen and (max-width: ${mobileBreakpoint}){
+    & {
+      padding: 2.5rem 1.5rem;
+    }
+    
     &:before {
       background-image:
               url(${bgImageMobile});
@@ -58,4 +65,26 @@ export const Title = styled.h1`
     font-weight: bolder;
     font-size: 2rem;
     color: white;
+`
+
+export const TodoFooter = styled.footer`
+  text-align: center;
+  font-size: .8rem;
+  color: ${placeholderColor};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  margin-top: 2rem;
+  
+  .attribution {
+    margin-top: 1rem;
+    & > p{
+      margin-top: .5rem;
+    }
+  }
+
+  @media only screen and (max-width: ${mobileBreakpoint}) {
+    margin-top: calc(40px + 2.5rem);
+  }
 `

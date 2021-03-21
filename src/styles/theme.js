@@ -43,7 +43,22 @@ export const backgroundColor = theme('mode', {
     dark: "hsl(235, 21%, 11%)" // veryDarkBlue
 });
 
+export const bgColorComponents = theme('mode', {
+    light: "hsl(0, 0%, 98%)",
+    dark: "hsl(235, 24%, 19%)"
+});
+
 export const textColor = theme('mode', {
-    light: "hsl(235, 19%, 35%)", // lightGrayishBlue
-    dark: "hsl(234, 39%, 85%)" // lightGrayishBlue
-})
+    light: "hsl(235, 19%, 35%)",
+    dark: "hsl(234, 39%, 85%)"
+});
+
+export const placeholderColor = theme('mode', {
+    light: "hsl(233, 14%, 35%)",
+    dark: "hsl(234, 11%, 52%)"
+});
+
+export const auxiliarColor = theme('mode', {
+    light: "hsl(233, 11%, 84%)",
+    dark: "hsl(233, 14%, 35%)"
+});

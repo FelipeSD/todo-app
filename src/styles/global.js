@@ -3,6 +3,8 @@ import {createGlobalStyle} from 'styled-components';
 import JosefinSansBold from '../assets/fonts/JosefinSans-Bold.ttf';
 import JosefinSansRegular from '../assets/fonts/JosefinSans-Regular.ttf';
 
+export const mobileBreakpoint = "376px";
+
 export default createGlobalStyle`
   // fonts
   @font-face {

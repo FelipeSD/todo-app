@@ -1,25 +1,39 @@
-import React, {useContext} from 'react';
+import React from 'react';
 
-import {TodoThemeProvider, useTheme} from "../../context/ThemeContext";
-import {Header, IconThemeContainer, MainContainer, Title, TodoContainer} from "./todoList.styled";
+import {useTheme} from "../../context/ThemeContext";
+import {Header, IconThemeContainer, MainContainer, Title, TodoContainer, TodoFooter} from "./todoList.styled";
 
+import audioOn from '../../assets/sounds/switch-on.mp3';
+import audioOff from '../../assets/sounds/switch-off.mp3';
 import IconSun from '../../assets/images/icon-sun.svg';
 import IconMoon from '../../assets/images/icon-moon.svg';
+import TodoForm from "../../components/TodoForm";
+
+const audioOnObject =  new Audio(audioOn);
+const audioOffObject =  new Audio(audioOff);
 
 export default function TodoList(props){
     const {theme, toggle} = useTheme();
 
+    const handleThemeChange = () => {
+        theme.mode === "dark"
+            ? audioOnObject.play()
+            : audioOffObject.play();
+
+        toggle();
+    }
+
     return (
         <MainContainer>
 
-            {/*remind to use react-spring fro drag and drop reorder list*/}
+            {/*remind to use react-spring for drag and drop reorder list*/}
 
             <TodoContainer>
                 <Header>
                     <Title>
                         Todo
                     </Title>
-                    <IconThemeContainer onClick={toggle}>
+                    <IconThemeContainer onClick={handleThemeChange}>
                         {
                             theme.mode === "dark"
                                 ? <img src={IconSun} alt={"Light theme"}/>
@@ -28,20 +42,22 @@ export default function TodoList(props){
                     </IconThemeContainer>
                 </Header>
 
-                items left
+                <TodoForm/>
 
-                All
-                Active
-                Completed
+                <TodoFooter>
+                    Drag and drop to reorder list
 
-                Clear Completed
-
-                Drag and drop to reorder list
-
-                <div className="attribution">
-                    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-                    Coded by <a href="#">Your Name Here</a>.
-                </div>
+                    <div className="attribution">
+                        <p>
+                            Challenge by <a href="https://www.frontendmentor.io?ref=challenge"
+                                            target="_blank"
+                                            rel={"noreferrer"}>Frontend Mentor</a>.
+                        </p>
+                        <p>
+                            Coded by <a href="https://github.com/FelipeSD">Felipe SD</a>.
+                        </p>
+                    </div>
+                </TodoFooter>
             </TodoContainer>
 
         </MainContainer>
