@@ -1,4 +1,6 @@
+import React from "react";
 import {
+    CheckboxContainer,
     FilterOptions,
     InputText,
     ItemGroup,
@@ -7,18 +9,17 @@ import {
     SmallButton,
     Text
 } from './todoForm.styled';
-import React from "react";
 
-export default function TodoForm(props){
+export default function TodoForm(props) {
     const handleSubmit = (e) => {
         e.preventDefault();
     }
 
-    return(
+    return (
         <>
             <form onSubmit={e => handleSubmit(e)} method="POST">
                 <ItemGroup className={"individual"}>
-                    <input type={"checkbox"} disabled />
+                    <input name={"newCheckItem"} type={"checkbox"} disabled/>
                     <InputText
                         type={"text"}
                         name={"todoItem"}
@@ -29,17 +30,14 @@ export default function TodoForm(props){
 
             <ListContainer>
                 <ItemGroup className={"list-item"}>
-                    <input type={"checkbox"} disabled />
-                    <Text>
-                        Complete online Javascript course
-                    </Text>
+                    <CheckboxContainer>
+                        <input type={"checkbox"} name={"checkbox1"}/>
+                        <Text>
+                            Complete online Javascript course
+                        </Text>
+                    </CheckboxContainer>
                 </ItemGroup>
-                <ItemGroup className={"list-item"}>
-                    <input type={"checkbox"} disabled />
-                    <Text>
-                        Jog around the park 3x
-                    </Text>
-                </ItemGroup>
+
 
                 <ListFooter>
                     <span>

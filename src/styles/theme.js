@@ -62,3 +62,8 @@ export const auxiliarColor = theme('mode', {
     light: "hsl(233, 11%, 84%)",
     dark: "hsl(233, 14%, 35%)"
 });
+
+export const inactiveColor = theme('mode', {
+    light: "hsl(236, 9%, 61%)",
+    dark: "hsl(234, 11%, 52%)"
+})
