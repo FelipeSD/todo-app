@@ -1,5 +1,12 @@
 import styled from 'styled-components';
-import {auxiliarColor, bgColorComponents, inactiveColor, placeholderColor, textColor} from "../../styles/theme";
+import {
+    auxiliarColor,
+    bgColorComponents,
+    hoverEffect,
+    inactiveColor,
+    placeholderColor,
+    textColor
+} from "../../styles/theme";
 import {mobileBreakpoint} from "../../styles/global";
 import checkIcon from '../../assets/images/icon-check.svg';
 
@@ -15,14 +22,15 @@ export const ItemGroup = styled.div`
   }
 
   &.list-item {
-    border-bottom: 1px solid ${auxiliarColor};
+    border-bottom: 1px solid ${auxiliarColor};   
   }
 `
 
 export const CheckboxContainer = styled.label`
   display: flex;
   align-items: center;
-
+  width: 100%;
+  
   & > input[type=checkbox] {
     opacity: 0;
     width: 1rem;
@@ -38,7 +46,9 @@ export const CheckboxContainer = styled.label`
         position: absolute;
         left: 1rem;
         border-radius: 50%;
+        top: 26%;
       }
+      
       &:before {
         border: 1px solid ${placeholderColor};
       }
@@ -47,6 +57,7 @@ export const CheckboxContainer = styled.label`
     &:checked ~ span {
       text-decoration: line-through;
       color: ${inactiveColor};
+      
       &:before{
         border: var(--check-background);
         background: var(--check-background);
@@ -151,4 +162,11 @@ export const SmallButton = styled(SimpleButton)`
   font-family: inherit;
   font-size: inherit;
   color: inherit;
+  
+  &:hover{
+    color: ${hoverEffect};
+  }
+  &.active{
+    color: var(--bright-blue);
+  }
 `

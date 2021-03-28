@@ -66,4 +66,9 @@ export const auxiliarColor = theme('mode', {
 export const inactiveColor = theme('mode', {
     light: "hsl(236, 9%, 61%)",
     dark: "hsl(234, 11%, 52%)"
+});
+
+export const hoverEffect = theme('mode', {
+    light: "hsl(235, 19%, 35%)",
+    dark: "hsl(236, 33%, 92%)"
 })

@@ -13,7 +13,7 @@ export const useTheme = () => useContext(ThemeToggleContext);
 export const TodoThemeProvider = ({ children }) => {
     // default mode is set to `light`
     const [theme, setTheme] = useState({
-        mode: 'light'
+        mode: 'dark'
     });
 
     // define toggle function

@@ -19,7 +19,7 @@ export default createGlobalStyle`
   
   // variables
   :root{
-    --primary-bright-blue: hsl(220, 98%, 61%);
+    --bright-blue: hsl(220, 98%, 61%);
     --check-background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%))
   }
   
