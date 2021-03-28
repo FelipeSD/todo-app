@@ -33,7 +33,7 @@ export default function TodoForm() {
     useEffect(()=>{
         let countLeft = 0;
 
-        list.map((item)=>{
+        list.forEach((item)=>{
             if(!item.isCompleted){
                 countLeft += 1
             }
@@ -87,6 +87,8 @@ export default function TodoForm() {
                     item={item}
                     handleCheck={handleCheck}
                     handleDelete={handleDelete}/>
+            }else{
+                return false;
             }
         });
 
